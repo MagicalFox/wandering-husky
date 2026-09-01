@@ -6,7 +6,7 @@
 
 backend:
   name: github
-  repo: GITHUB_USERNAME/wandering-husky
+  repo: MagicalFox/wandering-husky
   branch: main
   base_url: https://wandering-husky-auth.WORKERS_SUBDOMAIN.workers.dev
   auth_endpoint: /auth
