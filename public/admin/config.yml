@@ -8,7 +8,7 @@ backend:
   name: github
   repo: MagicalFox/wandering-husky
   branch: main
-  base_url: https://wandering-husky-auth.WORKERS_SUBDOMAIN.workers.dev
+  base_url: https://wandering-husky-auth.mrliuye.workers.dev
   auth_endpoint: /auth
 
 site_url: https://wanderinghusky.com
