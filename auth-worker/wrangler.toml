@@ -1,0 +1,7 @@
+name = "wandering-husky-auth"
+main = "src/index.js"
+compatibility_date = "2024-09-25"
+
+# Secrets (do NOT put them here). Set with:
+#   npx wrangler secret put GITHUB_CLIENT_ID
+#   npx wrangler secret put GITHUB_CLIENT_SECRET

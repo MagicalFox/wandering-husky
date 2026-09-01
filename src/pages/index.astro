@@ -1,0 +1,25 @@
+---
+import { getCollection, render } from 'astro:content';
+import Base from '../layouts/Base.astro';
+import settings from '../data/settings.json';
+
+const pages = await getCollection('pages');
+const home = pages.find((p) => p.data.slug === 'home' || p.data.title === 'Wandering Husky');
+const { Content } = home ? await render(home) : { Content: null };
+---
+<Base title="Wandering Husky" description="A travel journal — thoughts we left behind and thoughts we brought back.">
+  {settings.heroImage && (
+    <section class="hero">
+      <img src={settings.heroImage} alt="" loading="eager" />
+      <div class="hero-text">
+        <blockquote>“{settings.heroQuote}”</blockquote>
+        <p class="hero-sub">{settings.heroSub}</p>
+      </div>
+    </section>
+  )}
+  <div class="wrap">
+    <div class="prose">
+      {Content && <Content />}
+    </div>
+  </div>
+</Base>

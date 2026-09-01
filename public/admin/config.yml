@@ -1,0 +1,83 @@
+# Sveltia CMS configuration — Wandering Husky
+# Two placeholders must be filled in after the GitHub repo and the auth
+# worker exist (see README.md, "Publishing" section):
+#   backend.repo       ->  <your-github-username>/wandering-husky
+#   backend.base_url   ->  https://wandering-husky-auth.<your-subdomain>.workers.dev
+
+backend:
+  name: github
+  repo: GITHUB_USERNAME/wandering-husky
+  branch: main
+  base_url: https://wandering-husky-auth.WORKERS_SUBDOMAIN.workers.dev
+  auth_endpoint: /auth
+
+site_url: https://wanderinghusky.com
+media_folder: public/images
+public_folder: /images
+
+collections:
+  - name: posts
+    label: Blog Posts
+    folder: src/content/posts
+    create: true
+    delete: true
+    slug: '{{slug}}'
+    fields:
+      - { label: Title, name: title, widget: string }
+      - { label: Date, name: date, widget: date, format: 'YYYY-MM-DD' }
+      - { label: 'URL slug', name: slug, widget: string }
+      - { label: Type, name: type, widget: hidden, default: post }
+      - { label: 'Cover image', name: hero, widget: image, required: false }
+      - { label: Body, name: body, widget: markdown }
+
+  - name: pages
+    label: Pages
+    folder: src/content/pages
+    create: true
+    delete: true
+    slug: '{{slug}}'
+    fields:
+      - { label: Title, name: title, widget: string }
+      - { label: Date, name: date, widget: date, format: 'YYYY-MM-DD' }
+      - { label: 'URL slug', name: slug, widget: string }
+      - { label: Type, name: type, widget: hidden, default: page }
+      - { label: 'Cover image', name: hero, widget: image, required: false }
+      - { label: Body, name: body, widget: markdown }
+
+  - name: settings
+    label: Site Settings
+    files:
+      - label: General
+        name: settings
+        file: src/data/settings.json
+        fields:
+          - { label: 'Site title', name: siteTitle, widget: string }
+          - label: Font
+            name: font
+            widget: select
+            options:
+              - { label: 'Serif (classic)', value: serif }
+              - { label: 'Sans-serif (modern)', value: sans }
+          - { label: 'Homepage hero image', name: heroImage, widget: image }
+          - { label: 'Homepage hero quote', name: heroQuote, widget: string }
+          - { label: 'Homepage hero subtitle', name: heroSub, widget: text }
+          - { label: 'Footer quote', name: footerQuote, widget: string }
+          - { label: 'Footer note', name: footerNote, widget: string }
+      - label: Menu Bar
+        name: menu
+        file: src/data/menu.json
+        fields:
+          - label: 'Menu items'
+            name: items
+            widget: list
+            summary: '{{fields.label}}'
+            fields:
+              - { label: Label, name: label, widget: string }
+              - { label: URL, name: url, widget: string }
+              - label: Dropdown
+                name: dropdown
+                widget: select
+                options:
+                  - { label: 'None', value: none }
+                  - { label: 'Gallery (auto-list of trips)', value: gallery }
+                  - { label: 'Blog (auto-list of posts)', value: blog }

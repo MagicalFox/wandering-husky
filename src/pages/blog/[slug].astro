@@ -1,0 +1,29 @@
+---
+import { getCollection, render } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('posts');
+  const sorted = posts.sort((a, b) => a.data.date.localeCompare(b.data.date));
+  return sorted.map((post, i) => ({
+    params: { slug: post.data.slug },
+    props: { post, prev: sorted[i - 1], next: sorted[i + 1] },
+  }));
+}
+
+const { post, prev, next } = Astro.props;
+const { Content } = await render(post);
+---
+<Base title={post.data.title}>
+  <div class="wrap">
+    <article class="prose">
+      <p class="date">{post.data.date}</p>
+      <h1>{post.data.title}</h1>
+      <Content />
+    </article>
+    <nav class="pager">
+      {prev && <a class="prev" href={`/blog/${prev.data.slug}/`}>← {prev.data.title}</a>}
+      {next && <a class="next" href={`/blog/${next.data.slug}/`}>{next.data.title} →</a>}
+    </nav>
+  </div>
+</Base>

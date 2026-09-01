@@ -1,0 +1,79 @@
+---
+import { getCollection } from 'astro:content';
+import settings from '../data/settings.json';
+import menu from '../data/menu.json';
+
+interface Props {
+  title: string;
+  description?: string;
+}
+const { title, description } = Astro.props;
+const current = Astro.url.pathname;
+
+const pages = await getCollection('pages');
+const posts = (await getCollection('posts')).sort((a, b) => b.data.date.localeCompare(a.data.date));
+
+const TOP_LEVEL_TRIPS = ['2024-life-on-the-road-tour-du-mont-blanc', '2025-life-on-the-road-dolomites-italy'];
+const TAIL = ['alaska', 'alaska-bear-story', 'california', 'shenma-the-husky'];
+
+const galleryItems = [
+  ...pages
+    .filter((p) => /life-on-the-road/.test(p.data.slug) && !TOP_LEVEL_TRIPS.includes(p.data.slug))
+    .sort((a, b) => b.data.date.localeCompare(a.data.date)),
+  ...TAIL.map((s) => pages.find((p) => p.data.slug === s)).filter(Boolean),
+];
+
+function dropdownItems(kind: string | undefined) {
+  if (kind === 'gallery') return galleryItems.map((p) => ({ label: p!.data.title, url: `/${p!.data.slug}/` }));
+  if (kind === 'blog') return posts.map((p) => ({ label: p.data.title, url: `/blog/${p.data.slug}/` }));
+  return [];
+}
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title === settings.siteTitle ? title : `${title} – ${settings.siteTitle}`}</title>
+    {description && <meta name="description" content={description} />}
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🐺</text></svg>" />
+  </head>
+  <body data-font={settings.font}>
+    <header class="site-header">
+      <a class="site-title" href="/">{settings.siteTitle}</a>
+      <nav>
+        <ul>
+          {menu.items.map((item) => {
+            const sub = dropdownItems(item.dropdown);
+            return (
+              <li class={sub.length ? 'has-sub' : ''}>
+                <a href={item.url} aria-current={current === item.url ? 'page' : undefined}>{item.label}</a>
+                {sub.length > 0 && (
+                  <ul class="dropdown">
+                    {sub.map((s) => (
+                      <li><a href={s.url}>{s.label}</a></li>
+                    ))}
+                  </ul>
+                )}
+              </li>
+            );
+          })}
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <slot />
+    </main>
+    <footer class="site-footer">
+      <p>{settings.footerQuote}</p>
+      <p class="fine">
+        <a href="/about/">About</a> · <a href="/contact/">Contact</a> · <a href="/shenma-the-husky/">Shenma the Husky</a>
+      </p>
+      <p class="fine">{settings.footerNote}</p>
+    </footer>
+  </body>
+</html>
+
+<style is:global>
+  @import '../styles/global.css';
+</style>

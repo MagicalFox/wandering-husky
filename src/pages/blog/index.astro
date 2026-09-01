@@ -1,0 +1,20 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+
+const posts = (await getCollection('posts')).sort((a, b) => b.data.date.localeCompare(a.data.date));
+---
+<Base title="Blog" description="Thoughts we left behind and thoughts we brought back.">
+  <div class="wrap">
+    <h1 class="section-title">Blog</h1>
+    <div class="grid">
+      {posts.map((p) => (
+        <a class="card" href={`/blog/${p.data.slug}/`}>
+          {p.data.hero && <img src={p.data.hero} alt="" loading="lazy" />}
+          <h2>{p.data.title}</h2>
+          <div class="date">{p.data.date}</div>
+        </a>
+      ))}
+    </div>
+  </div>
+</Base>

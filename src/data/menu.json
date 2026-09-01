@@ -1,0 +1,10 @@
+{
+  "items": [
+    { "label": "Home", "url": "/", "dropdown": "none" },
+    { "label": "Gallery", "url": "/gallery/", "dropdown": "gallery" },
+    { "label": "Blog Feed", "url": "/blog/", "dropdown": "blog" },
+    { "label": "Trips", "url": "/trips/", "dropdown": "none" },
+    { "label": "2024, Life On The Road Tour Du Mont Blanc", "url": "/2024-life-on-the-road-tour-du-mont-blanc/", "dropdown": "none" },
+    { "label": "2025, Life On The Road Dolomites, Italy", "url": "/2025-life-on-the-road-dolomites-italy/", "dropdown": "none" }
+  ]
+}
