@@ -36,7 +36,7 @@ gh repo create wandering-husky --public --source . --push
 
 1. <https://dash.cloudflare.com> → sign up → **Workers & Pages → Create → Pages → Connect to Git** → pick the `wandering-husky` repo.
 2. Build settings: framework preset **Astro** (build command `npm run build`, output `dist`).
-3. The site goes live at `https://wandering-husky.pages.dev` on every push.
+3. The site goes live at `https://wandering-husky.mrliuye.workers.dev` on every push.
 4. Later: **Custom domains → add `wanderinghusky.com`** (Cloudflare walks you through DNS; domain renewal ~$10–15/yr is then the only cost).
 
 ### 3. Admin login — auth worker (free)
@@ -44,7 +44,7 @@ gh repo create wandering-husky --public --source . --push
 The `/admin` UI needs a tiny OAuth gateway so GitHub can verify your login:
 
 1. GitHub → **Settings → Developer settings → OAuth Apps → New OAuth App**:
-   - Homepage URL: `https://wandering-husky.pages.dev`
+   - Homepage URL: `https://wandering-husky.mrliuye.workers.dev`
    - Authorization callback URL: `https://wandering-husky-auth.<subdomain>.workers.dev/callback`
      (the `<subdomain>` shows on your Cloudflare Workers dashboard)
 2. Deploy the worker (source vendored from <https://github.com/sveltia/sveltia-cms-auth>, MIT):
@@ -57,7 +57,7 @@ The `/admin` UI needs a tiny OAuth gateway so GitHub can verify your login:
    npx wrangler deploy
    ```
 3. Fill the two placeholders in `public/admin/config.yml` (`repo`, `base_url`), commit, push.
-4. Open `https://wandering-husky.pages.dev/admin` → Sign in with GitHub.
+4. Open `https://wandering-husky.mrliuye.workers.dev/admin` → Sign in with GitHub.
 
 ## Re-running the migration
 
