@@ -24,7 +24,7 @@ collections:
     slug: '{{slug}}'
     fields:
       - { label: Title, name: title, widget: string }
-      - { label: Date, name: date, widget: date, format: 'YYYY-MM-DD' }
+      - { label: Date, name: date, widget: datetime, type: date, format: 'YYYY-MM-DD', time_format: false }
       - { label: 'URL slug', name: slug, widget: string }
       - { label: Type, name: type, widget: hidden, default: post }
       - { label: 'Cover image', name: hero, widget: image, required: false }
@@ -38,7 +38,7 @@ collections:
     slug: '{{slug}}'
     fields:
       - { label: Title, name: title, widget: string }
-      - { label: Date, name: date, widget: date, format: 'YYYY-MM-DD' }
+      - { label: Date, name: date, widget: datetime, type: date, format: 'YYYY-MM-DD', time_format: false }
       - { label: 'URL slug', name: slug, widget: string }
       - { label: Type, name: type, widget: hidden, default: page }
       - { label: 'Cover image', name: hero, widget: image, required: false }
