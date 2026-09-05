@@ -1,14 +1,12 @@
 ---
-title: "Shenma The Husky"
-date: "2019-10-12"
-slug: "shenma-the-husky"
+title: Shenma The Husky
+date: 2019-10-12
+slug: shenma-the-husky
 type: page
-hero: "/images/dsc01199.webp"
+hero: /images/dsc01199.webp
 ---
 
 ![](/images/dsc01199.webp)
-
-![](/images/dsc03373.webp)
 
 ![](/images/dsc03342-1.webp)
 
