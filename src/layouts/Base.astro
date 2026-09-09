@@ -22,9 +22,11 @@ const galleryItems = [
   ...TAIL.map((s) => pages.find((p) => p.data.slug === s)).filter(Boolean),
 ];
 
-function dropdownItems(kind: string | undefined) {
-  if (kind === 'gallery') return galleryItems.map((p) => ({ label: p!.data.title, url: `/${p!.data.slug}/` }));
-  if (kind === 'blog') return posts.map((p) => ({ label: p.data.title, url: `/blog/${p.data.slug}/` }));
+function dropdownItems(item: { dropdown?: string; items?: { label: string; url: string }[] }) {
+  // explicit list in menu.json wins; otherwise auto-generate
+  if (item.items?.length) return item.items;
+  if (item.dropdown === 'gallery') return galleryItems.map((p) => ({ label: p!.data.title, url: `/${p!.data.slug}/` }));
+  if (item.dropdown === 'blog') return posts.map((p) => ({ label: p.data.title, url: `/blog/${p.data.slug}/` }));
   return [];
 }
 ---
@@ -45,7 +47,7 @@ function dropdownItems(kind: string | undefined) {
       <nav>
         <ul>
           {menu.items.map((item) => {
-            const sub = dropdownItems(item.dropdown);
+            const sub = dropdownItems(item);
             return (
               <li class={sub.length ? 'has-sub' : ''}>
                 <a href={item.url} aria-current={current === item.url ? 'page' : undefined}>{item.label}</a>

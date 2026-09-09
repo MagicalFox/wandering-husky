@@ -8,7 +8,121 @@
     {
       "label": "Gallery",
       "url": "/gallery/",
-      "dropdown": "gallery"
+      "dropdown": "gallery",
+      "items": [
+        {
+          "label": "2024, Life On The Road Tour Du Mont Blanc",
+          "url": "/2024-life-on-the-road-tour-du-mont-blanc/"
+        },
+        {
+          "label": "2025, Life On The Road Dolomites, Italy",
+          "url": "/2025-life-on-the-road-dolomites-italy/"
+        },
+        {
+          "label": "2024, Life On The Road Banff & Jasper, Canada",
+          "url": "/2024-life-on-the-road-banff-jasper-canada/"
+        },
+        {
+          "label": "2024, Life On The Road Europe –  Istanbul & Cappadocia, Turkey",
+          "url": "/2024-life-on-the-road-europe-istanbul-cappadocia-turkey/"
+        },
+        {
+          "label": "2024, Life On The Road Europe –  Mont Saint-Michel, Saint Malo, France",
+          "url": "/2024-life-on-the-road-europe-mont-saint-michel-saint-malo-france/"
+        },
+        {
+          "label": "2021, Life On The Road Europe – Paris, France",
+          "url": "/2021-life-on-the-road-europe-paris-france/"
+        },
+        {
+          "label": "2023, Life On The Road Budapest – Vienna – Prague",
+          "url": "/2023-life-on-the-road-budapest-vienna-prague/"
+        },
+        {
+          "label": "2023, Life On The Road Africa –  Morocco, Fes – Casablanca",
+          "url": "/2023-life-on-the-road-africa-morocco-fes-casablanca/"
+        },
+        {
+          "label": "2023, Life On The Road Africa –  Morocco, Marrakech – Desert",
+          "url": "/2023-life-on-the-road-africa-morocco-marrakech/"
+        },
+        {
+          "label": "2021, Life On The Road Europe –  Nice and Monaco",
+          "url": "/2021-life-on-the-road-europe-nice-and-monaco/"
+        },
+        {
+          "label": "2021, Life On The Road Europe – Santorini Greece",
+          "url": "/2021-life-on-the-road-europe-greece-athens-santorini/"
+        },
+        {
+          "label": "2021, Life On The Road Europe –  UK, London & Edinburgh",
+          "url": "/2021-life-on-the-road-europe-uk-london-edinburgh/"
+        },
+        {
+          "label": "2021, Life On The Road Europe – Switzerland",
+          "url": "/2021-life-on-the-road-europe-switzerland/"
+        },
+        {
+          "label": "2021, Life On The Road Europe – Iceland",
+          "url": "/2021-life-on-the-road-europe-iceland/"
+        },
+        {
+          "label": "2021, Life On The Road Part 11 – D.C. Cherry Blossoms",
+          "url": "/2021-life-on-the-road-part-11-d-c-cherry-blossoms/"
+        },
+        {
+          "label": "2020, Life On The Road Part 10- New Orleans Street Arts",
+          "url": "/2020-life-on-the-road-part-10-new-orleans/"
+        },
+        {
+          "label": "2020, Life On The Road Part 9- White Sand National Park, Carlsbad Caverns National Park, Guadalupe Mountains National Park, Big Bend National Park",
+          "url": "/2020-life-on-the-road-part-9-white-sand-national-park-carlsbad-caverns-national-park-guadalupe-mountains-national-park-big-bend-national-park/"
+        },
+        {
+          "label": "2020, Life On The Road Part 7- Colorado National Monument & Black Canyon National Park",
+          "url": "/2020-life-on-the-road-part-7-colorado-national-monument-black-canyon-national-park/"
+        },
+        {
+          "label": "2020, Life On The Road Part 8- Great Sand Dune National Park",
+          "url": "/2020-life-on-the-road-part-8-great-sand-dune-national-park/"
+        },
+        {
+          "label": "2020, Life On The Road Part 5- All Hail the Mighty 5",
+          "url": "/2020-life-on-the-road-part-5-all-hail-the-mighty-5/"
+        },
+        {
+          "label": "2020, Life On The Road Part 6- Salt Lake City and Utah Ranch Stay",
+          "url": "/2020-life-on-the-road-part-6-salt-lake-city-and-utah-ranch-stay/"
+        },
+        {
+          "label": "2020, Life On The Road Part 4- Glacier NP and Yellowstone NP",
+          "url": "/2020-life-on-the-road-part-4-glacier-np-and-yellowstone-np/"
+        },
+        {
+          "label": "2020, Life On The Road Part 3- A pleasant stay on an Airbnb ranch in Bonners Ferry, Idaho",
+          "url": "/2020-life-on-the-road-part-3-a-pleasant-short-stay-on-a-idaho-range/"
+        },
+        {
+          "label": "2020, Life On The Road Part 2- Mt. Rainier NP, Seattle, Olympic NP",
+          "url": "/2020-life-on-the-road-part-2-mt-rainier-np-seattle-olympic-np/"
+        },
+        {
+          "label": "2020, Life On The Road Part 1- Lassen Volcano, Mt. Shasta, Crater Lake, and the Comet",
+          "url": "/2020-life-on-the-road-part-1-lassen-volcano-mt-shasta-crater-lake-and-the-comet/"
+        },
+        {
+          "label": "Alaska",
+          "url": "/alaska/"
+        },
+        {
+          "label": "Alaska, Bear Story",
+          "url": "/alaska-bear-story/"
+        },
+        {
+          "label": "California",
+          "url": "/california/"
+        }
+      ]
     },
     {
       "label": "Blog Feed",

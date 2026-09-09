@@ -81,3 +81,11 @@ collections:
                   - { label: 'None', value: none }
                   - { label: 'Gallery (auto-list of trips)', value: gallery }
                   - { label: 'Blog (auto-list of posts)', value: blog }
+              - label: 'Dropdown items (optional custom list; drag to reorder)'
+                name: items
+                widget: list
+                required: false
+                summary: '{{fields.label}}'
+                fields:
+                  - { label: Label, name: label, widget: string }
+                  - { label: URL, name: url, widget: string }
