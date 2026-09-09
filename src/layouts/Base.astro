@@ -36,6 +36,8 @@ function dropdownItems(kind: string | undefined) {
     <title>{title === settings.siteTitle ? title : `${title} – ${settings.siteTitle}`}</title>
     {description && <meta name="description" content={description} />}
     <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🐺</text></svg>" />
+    <!-- Cloudflare Web Analytics -->
+    <script is:inline type="module" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "d61b184dae974c6eaf39a0fd682e33bd"}'></script>
   </head>
   <body data-font={settings.font}>
     <header class="site-header">
