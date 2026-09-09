@@ -1,14 +1,12 @@
 ---
-title: "Wandering Husky"
-date: "2019-09-30"
-slug: "home"
+title: Wandering Husky
+date: 2019-09-30
+slug: home
 type: page
-hero: "/images/small_dsc01199-e1570505483275-1-1.webp"
+hero: /images/small_dsc01199-e1570505483275-1-1.webp
 ---
 
 [🐾Follow Instagram 🐾](https://www.instagram.com/wandering_husky/)
-
-![](/images/small_dsc01199-e1570505483275-1-1.webp)
 
 ## “Travel is fatal to prejudice, bigotry, and narrow-mindedness”
 
@@ -16,7 +14,7 @@ Interesting thoughts are the most faithful travel companion. Here we setup a lod
 
 [Reflection Pond](/blog-feed)
 
-* * *
+* \* \*
 
 Thoughts we left behind and thoughts we brought back
 
@@ -31,7 +29,7 @@ When you leave civilization hundreds of miles behind, finally there is time to h
 
 ![](/images/dsc4812-edit.webp)
 
-* * *
+* \* \*
 
 ![](/images/dsc3277-2-edit.webp)
 
