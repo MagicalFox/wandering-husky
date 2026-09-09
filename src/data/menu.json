@@ -3,7 +3,8 @@
     {
       "label": "Home",
       "url": "/",
-      "dropdown": "none"
+      "dropdown": "none",
+      "items": []
     },
     {
       "label": "Gallery",
@@ -11,12 +12,12 @@
       "dropdown": "gallery",
       "items": [
         {
-          "label": "2024, Life On The Road Tour Du Mont Blanc",
-          "url": "/2024-life-on-the-road-tour-du-mont-blanc/"
-        },
-        {
           "label": "2025, Life On The Road Dolomites, Italy",
           "url": "/2025-life-on-the-road-dolomites-italy/"
+        },
+        {
+          "label": "2024, Life On The Road Tour Du Mont Blanc",
+          "url": "/2024-life-on-the-road-tour-du-mont-blanc/"
         },
         {
           "label": "2024, Life On The Road Banff & Jasper, Canada",
@@ -131,12 +132,14 @@
     {
       "label": "Blog Feed",
       "url": "/blog/",
-      "dropdown": "blog"
+      "dropdown": "blog",
+      "items": []
     },
     {
       "label": "Trips",
       "url": "/trips/",
-      "dropdown": "none"
+      "dropdown": "none",
+      "items": []
     }
   ]
 }
