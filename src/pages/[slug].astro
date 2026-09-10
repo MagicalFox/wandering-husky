@@ -4,7 +4,7 @@ import Base from '../layouts/Base.astro';
 
 // Slugs served by dedicated routes or intentionally dropped.
 export async function getStaticPaths() {
-  const RESERVED = new Set(['home', 'wandering-husky', 'blog', 'blog-feed']);
+  const RESERVED = new Set(['home', 'wandering-husky', 'trips', 'blog', 'blog-feed']);
   const pages = await getCollection('pages');
   return pages
     .filter((p) => p.data.type !== 'portfolio' && !RESERVED.has(p.data.slug))

@@ -1,0 +1,49 @@
+---
+import { getCollection, render } from 'astro:content';
+import Base from '../layouts/Base.astro';
+
+const pages = await getCollection('pages');
+const journeys = pages
+  .filter((p) => /life-on-the-road/.test(p.data.slug) || ['alaska', 'alaska-bear-story', 'california'].includes(p.data.slug));
+
+const yearOf = (p: (typeof journeys)[number]) => p.data.slug.match(/^20\d\d/)?.[0] ?? p.data.date.slice(0, 4);
+
+const byYear = new Map<string, typeof journeys>();
+for (const j of journeys) {
+  const y = yearOf(j);
+  if (!byYear.has(y)) byYear.set(y, []);
+  byYear.get(y)!.push(j);
+}
+const years = [...byYear.keys()].sort((a, b) => b.localeCompare(a));
+
+function shortTitle(t: string) {
+  return t.replace(/^(\d{4}),?\s*Life On The Road\s*/i, '').replace(/\s+/g, ' ').trim();
+}
+
+const tripsPage = pages.find((p) => p.data.slug === 'trips');
+const { Content } = tripsPage ? await render(tripsPage) : { Content: null };
+---
+<Base title="Journeys" description="Every journey, with pictures — grouped by year.">
+  <div class="wrap">
+    <h1 class="section-title">Journeys</h1>
+    {years.map((year) => (
+      <section>
+        <h2 class="year-heading">{year}</h2>
+        <div class="grid">
+          {byYear.get(year)!.map((j) => (
+            <a class="card" href={`/${j.data.slug}/`}>
+              {j.data.hero && <img src={j.data.hero} alt="" loading="lazy" />}
+              <h2>{shortTitle(j.data.title)}</h2>
+            </a>
+          ))}
+        </div>
+      </section>
+    ))}
+
+    {Content && (
+      <div class="prose home-content">
+        <Content />
+      </div>
+    )}
+  </div>
+</Base>

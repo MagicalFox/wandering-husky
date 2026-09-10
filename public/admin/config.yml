@@ -61,6 +61,8 @@ collections:
           - { label: 'Homepage hero image', name: heroImage, widget: image }
           - { label: 'Homepage hero quote', name: heroQuote, widget: string }
           - { label: 'Homepage hero subtitle', name: heroSub, widget: text }
+          - { label: 'Homepage intro paragraph', name: introText, widget: text }
+          - { label: 'Shenma teaser text', name: shenmaTeaser, widget: text }
           - { label: 'Footer quote', name: footerQuote, widget: string }
           - { label: 'Footer note', name: footerNote, widget: string }
       - label: Menu Bar
