@@ -264,7 +264,12 @@ main { min-height: 60vh; }
 .prose img { cursor: zoom-in; }
 .lightbox {
   position: fixed;
-  inset: 0;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  width: 100dvw;
+  height: 100dvh;
   z-index: 100;
   display: grid;
   place-items: center;
