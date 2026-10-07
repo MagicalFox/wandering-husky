@@ -74,6 +74,40 @@ function dropdownItems(item: { dropdown?: string; items?: { label: string; url: 
       </p>
       <p class="fine">{settings.footerNote}</p>
     </footer>
+    <script is:inline>
+      // Lightbox: click a content image to view fullscreen; click or Esc to close.
+      (() => {
+        const overlay = document.createElement('div');
+        overlay.className = 'lightbox';
+        overlay.setAttribute('role', 'dialog');
+        overlay.setAttribute('aria-label', 'Image preview');
+        overlay.hidden = true;
+        const big = document.createElement('img');
+        overlay.appendChild(big);
+        document.body.appendChild(overlay);
+
+        function open(img) {
+          big.src = img.currentSrc || img.src;
+          big.alt = img.alt || '';
+          overlay.hidden = false;
+          document.body.style.overflow = 'hidden';
+        }
+        function close() {
+          overlay.hidden = true;
+          big.removeAttribute('src');
+          document.body.style.overflow = '';
+        }
+
+        document.addEventListener('click', (e) => {
+          const img = e.target.closest && e.target.closest('.prose img');
+          if (img && !img.closest('a')) open(img);
+        });
+        overlay.addEventListener('click', close);
+        document.addEventListener('keydown', (e) => {
+          if (e.key === 'Escape' && !overlay.hidden) close();
+        });
+      })();
+    </script>
   </body>
 </html>
 
